@@ -19,12 +19,27 @@ export function AppRoutes() {
         initialRouteName="Home"
         screenOptions={{
             tabBarActiveTintColor: '#7300d8',
-            height: 300
+            tabBarStyle: {
+              height: 90,
+              paddingBottom: 25,
+              
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 0,
+                height: 12,
+              },
+              shadowOpacity: 0.58,
+              shadowRadius: 16.00,
+
+              elevation: 24,
+              
+            }
         }}
       >
 
         <Tab.Screen name='Treinamento' component={Treinamento}
           options={{
+            headerShown:false,
             tabBarIcon: ({ size, color }) => (
               <MaterialIcons name="video-library" size={size} color={color} />
             )
@@ -32,6 +47,7 @@ export function AppRoutes() {
         />
         <Tab.Screen name='Home' component={Home} 
           options={{
+            headerShown:false,
             tabBarLabel: '',
             tabBarIcon: ({ size, color, focused }) => (
               <HomeButton color={color} size={size} focused={focused} />
@@ -41,6 +57,7 @@ export function AppRoutes() {
 
         <Tab.Screen name='Site' component={Site}
           options={{
+            headerShown:false,
             tabBarIcon: ({ size, color }) => (
               <MaterialCommunityIcons name="web" size={size} color={color} />
             )
